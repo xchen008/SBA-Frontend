@@ -34,3 +34,7 @@ Use variables, if statements, loops, at least one form of collections, functions
 Use AJAX (Optional) 
 Use JSON or XML (Optional)
 Use JQuery (Optional)
+
+
+From the requirements, I did not use tables because I used bootstrap for the layout. I did not used form but I used input elements and buttons
+The dropdown menu can be access when hover over the profile icon from any page. For Javascript, I used arrays as collection. 

@@ -5,9 +5,13 @@ let download_icon = "Images/Download_Icon.png";
 
 let profile_picture = document.getElementById('profile_picture');
 let file_input = document.getElementById('file-input');
+let addButton = document.getElementById('addbutton');
+let todoList = document.getElementById('todo-list');
+let todoItem = document.getElementById('todoItem');
 
 let programs = document.getElementById('programs');
 length = titles.length;
+
 
 for(let i = 0; i < length; i++){
 	let row = document.createElement('div');
@@ -16,14 +20,14 @@ for(let i = 0; i < length; i++){
 	programs.appendChild(row);
 
 	let img = document.createElement('div');
-	img.classList.add("col-sm-4");
+	img.classList.add("col-4");
 	
 	let tit = document.createElement('div');
-	tit.classList.add("col-sm-6");
+	tit.classList.add("col-6");
 	tit.style = "margin:auto;"
 
 	let link = document.createElement('div');
-	link.classList.add("col-sm-2");
+	link.classList.add("col-2");
 	link.style = "margin:auto;"
 
 
@@ -61,8 +65,20 @@ let changepic = function(){
     
 }
 
-file_input.addEventListener("click", changepic);
+let addItem = function(){
+	let newTodo = todoItem.value;
+	todoItem.value = "";
 
+	let todo = document.createElement('li');
+	todo.style = "font-weight:bold;font-size:25px;"
+	todo.textContent = newTodo;
+
+	todoList.appendChild(todo);
+	
+}
+
+file_input.addEventListener("click", changepic);
+addButton.addEventListener("click",addItem);
 
 
 
