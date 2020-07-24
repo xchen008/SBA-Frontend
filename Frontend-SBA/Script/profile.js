@@ -60,9 +60,11 @@ for(let i = 0; i < length; i++){
 }// end of for loop
 
 let changepic = function(){
-	let imgsource = window.prompt("Enter an image file path:");
-	profile_picture.src = imgsource;
-    
+	let fileReader = new FileReader();
+	fileReader.onload = function(event){
+		profile_picture.src = event.target.result;
+	};
+	fileReader.readAsDataURL(file_input.files[0]);
 }
 
 let addItem = function(){
@@ -70,14 +72,17 @@ let addItem = function(){
 	todoItem.value = "";
 
 	let todo = document.createElement('li');
+	todoList.appendChild(todo);
 	todo.style = "font-weight:bold;font-size:25px;"
 	todo.textContent = newTodo;
 
-	todoList.appendChild(todo);
-	
+	todo.addEventListener('dblclick', function(){
+		todoList.removeChild(todo);
+	});
+
 }
 
-file_input.addEventListener("click", changepic);
+file_input.addEventListener("change", changepic);
 addButton.addEventListener("click",addItem);
 
 

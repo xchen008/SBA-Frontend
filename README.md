@@ -39,4 +39,6 @@ Use JQuery (Optional)
 From the requirements, I did not use tables because I used bootstrap for the layout. I did not used form but I used input elements and buttons
 The dropdown menu can be access when hover over the profile icon from any page. For Javascript, I used arrays as collection. 
 
+In the profile page, user can click the edit icon to browser through their computer to find a new profile picture. On the right side, there is a fitness goal list where users can add by click the add button and can delete the element by double click the element. 
+
 Github: https://github.com/xchen008/SBA-Frontend.git
